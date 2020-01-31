@@ -6,7 +6,7 @@ Thank you for applying! This assessment will help us understand how you reason, 
 
 1. *This assessment should take no longer than 3 hours*. We'd like to respect your time, so submit whatever you can accomplish within this timeframe.
 2. *Submissions will only be accepted as zipped source code, or a github repository*. Please include everything in a single zip file, and email it to kieran@wellspent.co when you are done the assessment.
-3. *Incomplete submissions are fine*. Though the assessment is designed to be completable within the timeframe, it is also intended to be challenging.
+3. *Incomplete submissions are fine*. Though the assessment is designed to be completable within the timeframe, it is also intended to be challenging. Prioritize demonstrating good architecture and design over a fully working example.
 4. *Where there is ambiguity in the requirements, make a decision with the business in mind and focus on speedy delivery*.
 5. *Be prepared to justify your decisions*. If we decide to bring you in for a technical interview, we will expect you to explain aspects of your implementation and thought process.
 
@@ -14,10 +14,10 @@ Thank you for applying! This assessment will help us understand how you reason, 
 
 *Summary*: Your back-end system requires the capacity to process event-driven jobs outside of the HTTP request lifecycle, and you need a reusable pattern to emit events and declare how to process them. You have chosen to build a queue backed by a _redis cluster_, with queue logic handled by the library [Bull](https://github.com/OptimalBits/bull).
 
-*Evaluation*: We must be able to execute your solution, so you should include a sample event queue that uses your queue interface. Demonstrate your working solution in whatever way is easiest. A full nodejs webserver is not expected for this assignment, but might make testing easier.
+*Evaluation*: We should be able to execute your solution, so you should include a sample event queue that uses your queue interface. Demonstrate your working solution in whatever way is easiest. A full nodejs webserver is not expected for this assignment, but might make testing easier.
 
 * Story: As a developer building a new type of event-driven job,
-    * I should be able to use a single interface to declare new events
+    * I should be able to use a single reusable interface to declare new events
     * I should be able to use that same interface to:
         * Specify how an event is processed
         * Set event processing concurrency
@@ -34,6 +34,7 @@ Thank you for applying! This assessment will help us understand how you reason, 
 ## Suggestions
 
 1. Consider using [Docker](https://docs.docker.com/) and this [redis cluster image](https://github.com/Grokzen/docker-redis-cluster) to simplify getting the queue working
+2. Focus on the design of the interface over getting the redis cluster and underlying technology working perfectly. If necessary, you can connect to a single redis instance instead of a cluster
 
 
 
